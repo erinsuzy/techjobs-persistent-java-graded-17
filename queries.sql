@@ -1,4 +1,4 @@
---Part 1
+--Part 1 id=int, employer=varchar, name=varchar, skills=varchar
 
 --Part 2
 
