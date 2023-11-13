@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
+
 import java.util.Optional;
 
 @Controller
@@ -31,7 +32,7 @@ public class EmployerController {
         if (errors.hasErrors()) {
             return "employers/add";
         }
-
+        employerRepository.save(newEmployer);
         return "redirect:";
     }
 
@@ -50,8 +51,8 @@ public class EmployerController {
     }
 
     @GetMapping("index")
-    public String displayEmployers(Model model, String employer) {
-        model.addAttribute("employer", employer);
+    public String displayEmployers(Model model) {
+        model.addAttribute("employers", employerRepository.findAll());
         return "employers/index";
     }
 }
