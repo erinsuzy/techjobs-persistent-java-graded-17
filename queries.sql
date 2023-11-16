@@ -1,6 +1,8 @@
---Part 1 id=int, employer=varchar, name=varchar, skills=varchar
+--Part 1
+id=int, employer=varchar, name=varchar, skills=varchar
 
---Part 2 select st louis from employer
+--Part 2
+SELECT name FROM employer WHERE location = "St. Louis City";
 
 --Part 3
 
