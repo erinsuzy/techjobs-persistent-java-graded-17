@@ -42,7 +42,7 @@ public class SkillController {
 
         Optional<Skill> result = skillRepository.findById(skillId);
         if (result.isPresent()) {
-            Skill skill  = result.get();
+            Skill skill  = (Skill) result.get();
             model.addAttribute("skill", skill);
             return "skills/view";
         } else {
@@ -51,10 +51,10 @@ public class SkillController {
 
     }
 
-    @GetMapping("/")
+    @RequestMapping("/")
     public String index(Model model) {
         model.addAttribute("skills", skillRepository.findAll());
-        return "skills";
+        return "skills/index";
     }
 }
 

@@ -32,7 +32,7 @@ public class EmployerController {
         if (errors.hasErrors()) {
             return "employers/add";
         }
-        model.addAttribute("employer", employerRepository.save(newEmployer));
+        employerRepository.save(newEmployer);
         return "redirect:";
     }
 
@@ -50,9 +50,9 @@ public class EmployerController {
 
     }
 
-    @GetMapping("/")
+    @RequestMapping("/")
     public String index(Model model) {
         model.addAttribute("employers", employerRepository.findAll());
-        return "employers";
+        return "employers/index";
     }
 }

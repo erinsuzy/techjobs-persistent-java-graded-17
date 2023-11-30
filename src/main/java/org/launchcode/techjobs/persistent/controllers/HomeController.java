@@ -61,7 +61,7 @@ public class HomeController {
         jobRepository.save(newJob);
 
 
-            return "redirect:";
+            return "redirect:../";
 
     }
 
