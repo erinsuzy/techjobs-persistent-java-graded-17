@@ -20,7 +20,7 @@ import java.util.HashMap;
 public class ListController {
 
     @Autowired
-    private JobRepository jobRepository;
+    JobRepository jobRepository;
 
     static HashMap<String, String> columnChoices = new HashMap<>();
 

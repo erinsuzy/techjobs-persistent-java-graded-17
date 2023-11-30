@@ -19,7 +19,7 @@ public class SkillController {
 
     //index, displayAddSkillForm, processAddSkillForm, displayViewSkill
     @Autowired
-    private SkillRepository skillRepository;
+    SkillRepository skillRepository;
 
 
     @GetMapping("add")

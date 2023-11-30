@@ -17,7 +17,7 @@ import java.util.Optional;
 public class EmployerController {
 
     @Autowired
-    private EmployerRepository employerRepository;
+    EmployerRepository employerRepository;
 
     @GetMapping("add")
     public String displayAddEmployerForm(Model model) {
@@ -32,7 +32,7 @@ public class EmployerController {
         if (errors.hasErrors()) {
             return "employers/add";
         }
-        employerRepository.save(newEmployer);
+        model.addAttribute("employer", employerRepository.save(newEmployer));
         return "redirect:";
     }
 
